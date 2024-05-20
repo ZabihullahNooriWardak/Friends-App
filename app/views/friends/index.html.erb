@@ -1,0 +1,19 @@
+<!-- index.html.erb -->
+<%= content_for :head do %>
+  <%= stylesheet_link_tag 'index', media: 'all' %>
+<% end %>
+
+<p class="notice"><%= notice %></p>
+
+<h1>Friends</h1>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+    <p class="friend-link">
+      <%= link_to "Show this friend", friend %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New friend", new_friend_path, class: 'new-friend-link' %>
